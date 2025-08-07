@@ -1,0 +1,33 @@
+syntax="proto3";
+
+
+package api.v1;
+
+option go_package = "your_project/gen/api/v1;apiv1";
+
+
+message Header {
+   string n = 1;
+   string v = 5;
+}
+
+message Message {
+  repeated bytes id= 5;
+  int32 rc =10 ;
+  int64 dt = 20;
+  repeated Header hd = 30;
+
+
+  repeated bytes msg = 100;
+
+}
+
+
+message ACKMessage {
+
+}
+
+message Status{
+  bool ok = 10;
+  string err = 20;
+}

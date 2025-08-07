@@ -1,0 +1,14 @@
+syntax="proto3";
+import "messages.proto";
+
+package api.v1;
+
+option go_package = "your_project/gen/api/v1;apiv1";
+
+
+
+service QBroker{
+  rpc Publish(Message) returns(Status);
+  rpc Consume(ACKMessage) returns(Message);
+  rpc Ack(ACKMessage) returns (ACKMessage);
+}
